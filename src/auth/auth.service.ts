@@ -31,6 +31,7 @@ export class AuthService {
 
   async validateUser(email: string, password: string): Promise<Pick<UserModel, 'email'>> {
     const user = await this.findUser(email);
+    const test = { a: 2 };
     if (!user) {
       throw new UnauthorizedException(USER_NOT_FOUND_ERROR);
     }
